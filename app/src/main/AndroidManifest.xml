@@ -14,9 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Pertemuan3">
 
-        <!-- Project Login Activity as Main Launcher -->
+        <!-- Splash Activity as Main Launcher -->
         <activity
-            android:name=".project.MainActivity"
+            android:name=".splash.SplashActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
@@ -24,6 +24,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Project Login Activity -->
+        <activity
+            android:name=".project.MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
 
         <!-- Project Activities -->
         <activity
@@ -63,6 +69,11 @@
 
         <activity
             android:name=".project.ProfileActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".fragment.FragmentActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
