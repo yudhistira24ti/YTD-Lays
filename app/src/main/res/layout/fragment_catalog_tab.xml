@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F9FBF9">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Katalog Produk HPAI"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/simaju_text_primary"
+            android:layout_marginBottom="2dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Produk herbal terpercaya, berkualitas, &amp; halal"
+            android:textSize="13sp"
+            android:textColor="@color/simaju_text_secondary"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Search Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_input_field"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="14dp"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@android:drawable/ic_menu_search"
+                app:tint="@color/simaju_text_secondary"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="Search" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:hint="Cari produk herbal..."
+                android:textSize="14sp"
+                android:textColor="@color/simaju_text_primary"
+                android:textColorHint="@color/simaju_text_secondary"
+                android:focusable="false"
+                android:clickable="true"
+                android:importantForAutofill="no"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <!-- Product Grid Row 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <!-- Product 1: Madu HPAI -->
+            <LinearLayout
+                android:id="@+id/catCardMadu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_tab_selected"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/images"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="Madu HPAI" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Madu HPAI"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/simaju_text_primary"
+                    android:layout_marginBottom="2dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Stok: 50"
+                    android:textSize="11sp"
+                    android:textColor="@color/simaju_text_secondary"
+                    android:layout_marginBottom="6dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rp 85.000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/simaju_green"
+                    android:layout_marginBottom="10dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="36dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_tab_selected"
+                        android:text="Detail"
+                        android:textSize="12sp"
+                        android:textColor="@color/simaju_green"
+                        android:textAllCaps="false"
+                        android:layout_marginEnd="4dp" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="36dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_primary_button"
+                        android:text="+ Keranjang"
+                        android:textSize="11sp"
+                        android:textColor="@color/white"
+                        android:textAllCaps="false"
+                        android:layout_marginStart="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Product 2: Kopi -->
+            <LinearLayout
+                android:id="@+id/catCardKopi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_tab_selected"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:layout_marginStart="8dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/images_kopi"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="Kopi" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kopi"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/simaju_text_primary"
+                    android:layout_marginBottom="2dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Stok: 99"
+                    android:textSize="11sp"
+                    android:textColor="@color/simaju_text_secondary"
+                    android:layout_marginBottom="6dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rp 45.000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/simaju_green"
+                    android:layout_marginBottom="10dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="36dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_tab_selected"
+                        android:text="Detail"
+                        android:textSize="12sp"
+                        android:textColor="@color/simaju_green"
+                        android:textAllCaps="false"
+                        android:layout_marginEnd="4dp" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="36dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_primary_button"
+                        android:text="+ Keranjang"
+                        android:textSize="11sp"
+                        android:textColor="@color/white"
+                        android:textAllCaps="false"
+                        android:layout_marginStart="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Product Grid Row 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <!-- Product 3: Minyak HPAI -->
+            <LinearLayout
+                android:id="@+id/catCardMinyak"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_tab_selected"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/images_minyak"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="Minyak HPAI" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Minyak HPAI"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/simaju_text_primary"
+                    android:layout_marginBottom="2dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Stok: 30"
+                    android:textSize="11sp"
+                    android:textColor="@color/simaju_text_secondary"
+                    android:layout_marginBottom="6dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rp 120.000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/simaju_green"
+                    android:layout_marginBottom="10dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="36dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_tab_selected"
+                        android:text="Detail"
+                        android:textSize="12sp"
+                        android:textColor="@color/simaju_green"
+                        android:textAllCaps="false"
+                        android:layout_marginEnd="4dp" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="36dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_primary_button"
+                        android:text="+ Keranjang"
+                        android:textSize="11sp"
+                        android:textColor="@color/white"
+                        android:textAllCaps="false"
+                        android:layout_marginStart="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Product 4: Susu HPAI -->
+            <LinearLayout
+                android:id="@+id/catCardSusu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_tab_selected"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:layout_marginStart="8dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/images_susu"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="Susu HPAI" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Susu HPAI"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/simaju_text_primary"
+                    android:layout_marginBottom="2dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Stok: 40"
+                    android:textSize="11sp"
+                    android:textColor="@color/simaju_text_secondary"
+                    android:layout_marginBottom="6dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rp 55.000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/simaju_green"
+                    android:layout_marginBottom="10dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="36dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_tab_selected"
+                        android:text="Detail"
+                        android:textSize="12sp"
+                        android:textColor="@color/simaju_green"
+                        android:textAllCaps="false"
+                        android:layout_marginEnd="4dp" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="36dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_primary_button"
+                        android:text="+ Keranjang"
+                        android:textSize="11sp"
+                        android:textColor="@color/white"
+                        android:textAllCaps="false"
+                        android:layout_marginStart="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
