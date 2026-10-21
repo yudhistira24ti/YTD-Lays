@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/tvSnackName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lays Classic Potato Chips"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <ImageView
+            android:id="@+id/ivSnackImage"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:scaleType="centerInside"
+            android:contentDescription="Lays"
+            android:src="@drawable/lays"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Komposisi Gizi (per 28g)"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kalori: 160 kkal&#10;Lemak Total: 10g&#10;Lemak Jenuh: 1.5g&#10;Karbohidrat: 15g&#10;Protein: 2g&#10;Sodium: 170mg&#10;Serat: 1g"
+            android:textSize="16sp"
+            android:lineSpacingExtra="4dp" />
+
+    </LinearLayout>
+</ScrollView>

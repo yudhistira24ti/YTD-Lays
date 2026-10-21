@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5"
+    tools:context=".project.RegisterActivity">
+
+    <!-- Toolbar with Back Button -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarRegister"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/simaju_green"
+        app:title="Daftar Akun SiMaju"
+        app:titleTextColor="@color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buat Akun Baru"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/simaju_text_primary"
+                android:layout_marginBottom="4dp" />
+
+                <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Daftar untuk mulai belanja &amp; mengelola HPAI"
+                android:textSize="14sp"
+                android:textColor="@color/simaju_text_secondary"
+                android:layout_marginBottom="24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama Lengkap"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/simaju_text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/bg_input_field"
+                android:hint="Nama Lengkap"
+                android:inputType="textPersonName"
+                android:paddingHorizontal="14dp"
+                android:textSize="14sp"
+                android:layout_marginBottom="16dp"
+                android:autofillHints="name" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alamat Email"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/simaju_text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/etRegEmail"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/bg_input_field"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:paddingHorizontal="14dp"
+                android:textSize="14sp"
+                android:layout_marginBottom="16dp"
+                android:autofillHints="emailAddress" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kata Sandi"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/simaju_text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/etRegPassword"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/bg_input_field"
+                android:hint="••••••••••"
+                android:inputType="textPassword"
+                android:paddingHorizontal="14dp"
+                android:textSize="14sp"
+                android:layout_marginBottom="24dp"
+                android:autofillHints="password" />
+
+            <Button
+                android:id="@+id/btnRegisterSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@drawable/bg_primary_button"
+                android:text="Daftar Sekarang"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

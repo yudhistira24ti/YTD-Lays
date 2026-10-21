@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9FBF9"
+    tools:context=".project.ProductDetailActivity">
+
+    <!-- Bottom Fixed Action Buttons -->
+    <LinearLayout
+        android:id="@+id/bottomActionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:elevation="12dp"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp">
+
+        <Button
+            android:id="@+id/btnAddToCart"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tab_selected"
+            android:text="Tambah"
+            android:textColor="@color/simaju_green"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btnBuyNow"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_primary_button"
+            android:text="Beli Sekarang"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomActionLayout"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+
+            <!-- Top Header Bar with Back and Share -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:paddingHorizontal="16dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@android:drawable/ic_menu_revert"
+                    app:tint="@color/simaju_text_primary"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="Kembali" />
+
+                <ImageView
+                    android:id="@+id/btnShare"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@android:drawable/ic_menu_share"
+                    app:tint="@color/simaju_text_primary"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="Bagikan" />
+            </RelativeLayout>
+
+            <!-- Product Image Banner -->
+            <ImageView
+                android:id="@+id/ivProductImage"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/images"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="Gambar Produk" />
+
+            <!-- Product Info Container -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp">
+
+                <!-- Product Name -->
+                <TextView
+                    android:id="@+id/tvProductName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Madu HPAI"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/simaju_text_primary"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Price & Stock Status Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:id="@+id/tvProductPrice"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Rp 85.000"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/simaju_green" />
+
+                    <!-- Stock Status Badge -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="● Stok Tersedia"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/simaju_green"
+                        android:background="@drawable/bg_tab_selected"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="5dp" />
+                </LinearLayout>
+
+                <!-- Rating & Reviews -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="★ 4.8"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#FFA726"
+                        android:layout_marginEnd="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(128 ulasan pembeli)"
+                        android:textSize="13sp"
+                        android:textColor="@color/simaju_text_secondary" />
+                </LinearLayout>
+
+                <!-- Divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E0E0E0"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Tentang Produk -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tentang Produk"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/simaju_text_primary"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/tvProductDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Madu Hutan Asli HPAI dipanen langsung dari sarang lebah Apis Dorsata di pedalaman hutan tropis nusantara. Memiliki rasa manis yang khas, kaya akan enzim alami, antioksidan, dan nutrisi untuk memelihara daya tahan tubuh keluarga Anda."
+                    android:textSize="14sp"
+                    android:textColor="@color/simaju_text_secondary"
+                    android:lineSpacingExtra="4dp"
+                    android:layout_marginBottom="20dp" />
+
+                <!-- Tabs: Manfaat & Cara Pakai -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Manfaat"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/simaju_green"
+                            android:paddingBottom="6dp" />
+
+                        <!-- Green underline for active tab -->
+                        <View
+                            android:layout_width="60dp"
+                            android:layout_height="3dp"
+                            android:background="@color/simaju_green" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cara Pakai"
+                            android:textSize="15sp"
+                            android:textColor="@color/simaju_text_secondary"
+                            android:paddingBottom="6dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Manfaat Content Card -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_tab_selected"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• Meningkatkan stamina &amp; kekebalan tubuh secara alami"
+                        android:textSize="13sp"
+                        android:textColor="@color/simaju_text_primary"
+                        android:layout_marginBottom="8dp"
+                        android:lineSpacingExtra="2dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• Membantu proses pemulihan luka dan peradangan"
+                        android:textSize="13sp"
+                        android:textColor="@color/simaju_text_primary"
+                        android:layout_marginBottom="8dp"
+                        android:lineSpacingExtra="2dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• Menjadi pemanis alami sehat alternatif pengganti gula tebu"
+                        android:textSize="13sp"
+                        android:textColor="@color/simaju_text_primary"
+                        android:lineSpacingExtra="2dp" />
+                </LinearLayout>
+
+                <!-- Jumlah Pembelian Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Jumlah Pembelian"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/simaju_text_primary" />
+
+                    <!-- Quantity Stepper -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:background="@drawable/bg_tab_selected"
+                        android:padding="4dp">
+
+                        <Button
+                            android:id="@+id/btnMinus"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@android:color/transparent"
+                            android:text="-"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/simaju_text_primary" />
+
+                        <TextView
+                            android:id="@+id/tvQuantity"
+                            android:layout_width="36dp"
+                            android:layout_height="wrap_content"
+                            android:text="1"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/simaju_text_primary"
+                            android:gravity="center" />
+
+                        <Button
+                            android:id="@+id/btnPlus"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@android:color/transparent"
+                            android:text="+"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/simaju_text_primary" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

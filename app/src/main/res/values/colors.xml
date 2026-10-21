@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="biru">#0F2EDC</color>
+    <color name="hijau">#51C51F</color>
+    <color name="merah_tua">#76060E</color>
+
+    <!-- SiMaju Color Palette -->
+    <color name="simaju_green">#1B5E20</color>
+    <color name="simaju_green_dark">#0F3812</color>
+    <color name="simaju_green_light">#2E7D32</color>
+    <color name="simaju_orange">#E65100</color>
+    <color name="simaju_orange_text">#D84315</color>
+    <color name="simaju_background">#1B5E20</color>
+    <color name="simaju_card_bg">#FFFFFFFF</color>
+    <color name="simaju_text_primary">#212121</color>
+    <color name="simaju_text_secondary">#757575</color>
+    <color name="simaju_input_bg">#FAFAFA</color>
+    <color name="simaju_input_stroke">#E0E0E0</color>
+    <color name="simaju_tab_unselected_text">#757575</color>
+    <color name="simaju_tab_selected_text">#1B5E20</color>
+</resources>

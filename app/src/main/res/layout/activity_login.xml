@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/simaju_green"
+    tools:context=".project.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingTop="32dp"
+            android:paddingBottom="24dp"
+            android:paddingHorizontal="24dp">
+
+            <!-- App Logo & Name Row -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="10dp">
+
+                <!-- Logo Box -->
+                <FrameLayout
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_tab_selected"
+                    android:padding="4dp"
+                    android:layout_marginEnd="12dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/desain_logo"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="Logo SiMaju" />
+                </FrameLayout>
+
+                <!-- App Titles -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SiMaju"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HPAI HERBAL"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="#FFA726"
+                        android:letterSpacing="0.05" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Subtitle -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aplikasi Manajemen Penjualan &amp; Belanja HPAI"
+                android:textSize="13sp"
+                android:textColor="#E0F2F1"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- Bottom Sheet Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_login_card"
+            android:orientation="vertical"
+            android:paddingTop="28dp"
+            android:paddingBottom="36dp"
+            android:paddingHorizontal="24dp">
+
+            <!-- Tab Segmented Control -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="#F5F5F5"
+                android:orientation="horizontal"
+                android:padding="4dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tabCustomer"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Customer"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:textColor="@color/simaju_green"
+                    android:gravity="center"
+                    android:background="@drawable/bg_tab_selected" />
+
+                <TextView
+                    android:id="@+id/tabOwner"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Owner"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:textColor="@color/simaju_tab_unselected_text"
+                    android:gravity="center"
+                    android:background="@drawable/bg_tab_unselected" />
+            </LinearLayout>
+
+            <!-- Welcome Header -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selamat Datang Kembali"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/simaju_text_primary"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Masuk untuk mulai mengelola dan berbelanja herbal HPAI"
+                android:textSize="13sp"
+                android:textColor="@color/simaju_text_secondary"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Alamat Email Label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alamat Email"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/simaju_text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Email Input Field -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/bg_input_field"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="14dp"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@android:drawable/ic_dialog_email"
+                    app:tint="@color/simaju_text_secondary"
+                    android:layout_marginEnd="10dp"
+                    android:contentDescription="Email Icon" />
+
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:textSize="14sp"
+                    android:textColor="@color/simaju_text_primary"
+                    android:textColorHint="@color/simaju_text_secondary"
+                    android:autofillHints="emailAddress" />
+            </LinearLayout>
+
+            <!-- Kata Sandi Label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kata Sandi"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/simaju_text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Password Input Field -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/bg_input_field"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="14dp"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@android:drawable/ic_lock_lock"
+                    app:tint="@color/simaju_text_secondary"
+                    android:layout_marginEnd="10dp"
+                    android:contentDescription="Lock Icon" />
+
+                <EditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:hint="••••••••••"
+                    android:inputType="textPassword"
+                    android:textSize="14sp"
+                    android:textColor="@color/simaju_text_primary"
+                    android:textColorHint="@color/simaju_text_secondary"
+                    android:autofillHints="password" />
+
+                <ImageView
+                    android:id="@+id/ivTogglePassword"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@android:drawable/ic_menu_view"
+                    app:tint="@color/simaju_text_secondary"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="Toggle Password Visibility" />
+            </LinearLayout>
+
+            <!-- Lupa Kata Sandi Link -->
+            <TextView
+                android:id="@+id/tvForgotPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lupa Kata Sandi?"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/simaju_green"
+                android:layout_gravity="end"
+                android:layout_marginBottom="24dp"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <!-- Masuk Sekarang Button -->
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@drawable/bg_primary_button"
+                android:text="Masuk Sekarang"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Footer: Belum punya akun? Daftar -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Belum punya akun? "
+                    android:textSize="14sp"
+                    android:textColor="@color/simaju_text_secondary" />
+
+                <TextView
+                    android:id="@+id/tvRegister"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Daftar"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/simaju_green"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
