@@ -1,5 +1,6 @@
 package com.example.pertemuan3.project
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.method.PasswordTransformationMethod
@@ -21,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         val tabCustomer: TextView = findViewById(R.id.tabCustomer)
         val tabOwner: TextView = findViewById(R.id.tabOwner)
-        val etEmail: EditText = findViewById(R.id.etEmail)
+        val etEmail: EditText = findViewById(R.id.etEmail)   // kolom ini dipakai sebagai username
         val etPassword: EditText = findViewById(R.id.etPassword)
         val ivTogglePassword: ImageView = findViewById(R.id.ivTogglePassword)
         val tvForgotPassword: TextView = findViewById(R.id.tvForgotPassword)
@@ -56,31 +57,41 @@ class MainActivity : AppCompatActivity() {
             etPassword.setSelection(etPassword.text.length)
         }
 
-        // Login Button
+        // Login Button (2 rule)
         btnLogin.setOnClickListener {
-            val email = etEmail.text.toString().trim()
+            val username = etEmail.text.toString().trim()
             val password = etPassword.text.toString().trim()
 
-            if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Email dan Kata Sandi tidak boleh kosong", Toast.LENGTH_SHORT).show()
+            if (username.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "Username dan Kata Sandi tidak boleh kosong", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(this, "Login Berhasil!", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, DashboardActivity::class.java)
-                startActivity(intent)
-                finish()
+                val pref = getSharedPreferences("user_data", Context.MODE_PRIVATE)
+                val spUsername = pref.getString("username", null)
+                val spPassword = pref.getString("password", null)
+
+                // Rule 1: username = password
+                val rule1 = username == password
+                // Rule 2: cocok dengan username & password di SharedPreferences
+                val rule2 = spUsername != null && username == spUsername && password == spPassword
+
+                if (rule1 || rule2) {
+                    Toast.makeText(this, "Login Berhasil!", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, DashboardActivity::class.java))
+                    finish()
+                } else {
+                    Toast.makeText(this, "Username atau password salah", Toast.LENGTH_SHORT).show()
+                }
             }
         }
 
         // Forgot Password
         tvForgotPassword.setOnClickListener {
-            val intent = Intent(this, ForgotPasswordActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, ForgotPasswordActivity::class.java))
         }
 
         // Register Link
         tvRegister.setOnClickListener {
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, RegisterActivity::class.java))
         }
     }
 }

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="#F5F5F5">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrasi Berhasil"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/simaju_text_primary" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Akun kamu sudah terdaftar. Silakan login."
+        android:textSize="14sp"
+        android:textColor="@color/simaju_text_secondary"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp" />
+
+    <Button
+        android:id="@+id/btnKeLogin"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="@drawable/bg_primary_button"
+        android:text="Ke Halaman Login"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textAllCaps="false" />
+</LinearLayout>
