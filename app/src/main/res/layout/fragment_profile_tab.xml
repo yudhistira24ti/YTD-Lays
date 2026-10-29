@@ -4,12 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="#F9FBF9">
+    android:background="@color/simaju_page_bg">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="@color/simaju_page_bg"
         android:padding="16dp">
 
         <!-- Title -->
@@ -30,7 +31,7 @@
             android:orientation="horizontal"
             android:gravity="center_vertical"
             android:padding="20dp"
-            android:layout_marginBottom="20dp">
+            android:layout_marginBottom="16dp">
 
             <!-- Avatar -->
             <FrameLayout
@@ -70,6 +71,45 @@
                     android:textSize="13sp"
                     android:textColor="#E0F2F1" />
             </LinearLayout>
+        </LinearLayout>
+
+        <!-- Dark Mode Toggle Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_tab_selected"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mode Gelap (Dark Mode)"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/simaju_text_primary"
+                    android:layout_marginBottom="2dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Aktifkan tampilan malam untuk kenyamanan."
+                    android:textSize="12sp"
+                    android:textColor="@color/simaju_text_secondary" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchCustomerDarkMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
         <!-- Informasi Pribadi Header & Edit -->

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F9FBF9"
+    android:background="@color/simaju_page_bg"
     tools:context=".owner.OwnerDashboardActivity">
 
     <!-- Bottom Navigation View for Owner -->
@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/white"
+        android:background="@color/simaju_card_bg"
         android:elevation="8dp"
         app:itemIconTint="@color/simaju_green"
         app:itemTextColor="@color/simaju_green"
@@ -24,6 +24,7 @@
         android:id="@+id/ownerFragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/simaju_page_bg"
         android:layout_above="@id/ownerBottomNav" />
 
 </RelativeLayout>

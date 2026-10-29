@@ -13,6 +13,7 @@
     <color name="simaju_orange">#E65100</color>
     <color name="simaju_orange_text">#D84315</color>
     <color name="simaju_background">#1B5E20</color>
+    <color name="simaju_page_bg">#F9FBF9</color>
     <color name="simaju_card_bg">#FFFFFFFF</color>
     <color name="simaju_text_primary">#212121</color>
     <color name="simaju_text_secondary">#757575</color>

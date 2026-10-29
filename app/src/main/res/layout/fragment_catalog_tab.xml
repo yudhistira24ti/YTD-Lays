@@ -4,12 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="#F9FBF9">
+    android:background="@color/simaju_page_bg">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="@color/simaju_page_bg"
         android:padding="16dp">
 
         <!-- Title -->
@@ -125,10 +126,10 @@
                         android:layout_width="0dp"
                         android:layout_height="36dp"
                         android:layout_weight="1"
-                        android:background="@drawable/bg_tab_selected"
+                        android:background="@drawable/bg_input_field"
                         android:text="Detail"
                         android:textSize="12sp"
-                        android:textColor="@color/simaju_green"
+                        android:textColor="@color/simaju_text_primary"
                         android:textAllCaps="false"
                         android:layout_marginEnd="4dp" />
 
@@ -201,10 +202,10 @@
                         android:layout_width="0dp"
                         android:layout_height="36dp"
                         android:layout_weight="1"
-                        android:background="@drawable/bg_tab_selected"
+                        android:background="@drawable/bg_input_field"
                         android:text="Detail"
                         android:textSize="12sp"
-                        android:textColor="@color/simaju_green"
+                        android:textColor="@color/simaju_text_primary"
                         android:textAllCaps="false"
                         android:layout_marginEnd="4dp" />
 
@@ -285,10 +286,10 @@
                         android:layout_width="0dp"
                         android:layout_height="36dp"
                         android:layout_weight="1"
-                        android:background="@drawable/bg_tab_selected"
+                        android:background="@drawable/bg_input_field"
                         android:text="Detail"
                         android:textSize="12sp"
-                        android:textColor="@color/simaju_green"
+                        android:textColor="@color/simaju_text_primary"
                         android:textAllCaps="false"
                         android:layout_marginEnd="4dp" />
 
@@ -361,10 +362,10 @@
                         android:layout_width="0dp"
                         android:layout_height="36dp"
                         android:layout_weight="1"
-                        android:background="@drawable/bg_tab_selected"
+                        android:background="@drawable/bg_input_field"
                         android:text="Detail"
                         android:textSize="12sp"
-                        android:textColor="@color/simaju_green"
+                        android:textColor="@color/simaju_text_primary"
                         android:textAllCaps="false"
                         android:layout_marginEnd="4dp" />
 
