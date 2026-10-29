@@ -41,12 +41,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Atur alamat toko dan jam operasional"
+                android:text="Atur jam operasional dan titik lokasi toko pada Peta"
                 android:textSize="12sp"
                 android:textColor="@color/simaju_text_secondary"
                 android:layout_marginBottom="14dp" />
 
             <EditText
+                android:id="@+id/etStoreName"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:background="@drawable/bg_input_field"
@@ -55,23 +56,9 @@
                 android:paddingHorizontal="12dp"
                 android:textSize="13sp"
                 android:textColor="@color/simaju_text_primary"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="14dp"
                 android:autofillHints="name"
                 android:inputType="text" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="72dp"
-                android:background="@drawable/bg_input_field"
-                android:hint="Alamat Toko"
-                android:text="jln. Dumai"
-                android:paddingHorizontal="12dp"
-                android:paddingTop="10dp"
-                android:textSize="13sp"
-                android:textColor="@color/simaju_text_primary"
-                android:layout_marginBottom="12dp"
-                android:autofillHints="postalAddress"
-                android:inputType="textMultiLine" />
 
             <!-- Jam Buka & Tutup -->
             <LinearLayout
@@ -96,6 +83,7 @@
                         android:layout_marginBottom="4dp" />
 
                     <EditText
+                        android:id="@+id/etOpenTime"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
                         android:background="@drawable/bg_input_field"
@@ -123,6 +111,7 @@
                         android:layout_marginBottom="4dp" />
 
                     <EditText
+                        android:id="@+id/etCloseTime"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
                         android:background="@drawable/bg_input_field"
@@ -136,11 +125,24 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/btnSaveStoreSettings"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:background="@drawable/bg_primary_button"
                 android:text="Simpan Pengaturan Toko"
                 android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:id="@+id/btnOpenMapOwner"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_tab_selected"
+                android:text="Ubah Lokasi Toko di Peta"
+                android:textColor="@color/simaju_green"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:textAllCaps="false" />

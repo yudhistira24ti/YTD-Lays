@@ -1,5 +1,6 @@
 package com.example.pertemuan3.project
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.pertemuan3.R
 
@@ -18,11 +18,21 @@ class HomeTabFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home_tab, container, false)
 
+        val tvStoreName: TextView = view.findViewById(R.id.tvStoreName)
+        val tvStoreHours: TextView = view.findViewById(R.id.tvStoreHours)
         val btnLihatLokasi: TextView = view.findViewById(R.id.btnLihatLokasi)
         val cardMadu: LinearLayout = view.findViewById(R.id.cardMadu)
         val cardKopi: LinearLayout = view.findViewById(R.id.cardKopi)
         val cardMinyak: LinearLayout = view.findViewById(R.id.cardMinyak)
         val cardSusu: LinearLayout = view.findViewById(R.id.cardSusu)
+
+        val prefs = requireContext().getSharedPreferences("store_location", Context.MODE_PRIVATE)
+        val storeName = prefs.getString("store_name", "Toko Herbal HPAI")
+        val openTime = prefs.getString("open_time", "08:00")
+        val closeTime = prefs.getString("close_time", "20:00")
+
+        tvStoreName.text = storeName
+        tvStoreHours.text = "Buka • $openTime–$closeTime"
 
         cardMadu.setOnClickListener {
             openProductDetail("Madu HPAI", "Rp 85.000", R.drawable.images)
@@ -41,7 +51,10 @@ class HomeTabFragment : Fragment() {
         }
 
         btnLihatLokasi.setOnClickListener {
-            Toast.makeText(requireContext(), "BC HPAI Yogyakarta 2 - Lokasi Toko", Toast.LENGTH_SHORT).show()
+            val intent = Intent(requireContext(), StoreMapActivity::class.java).apply {
+                putExtra("is_owner_mode", false)
+            }
+            startActivity(intent)
         }
 
         return view

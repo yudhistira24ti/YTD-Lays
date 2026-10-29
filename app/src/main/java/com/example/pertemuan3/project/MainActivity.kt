@@ -11,10 +11,12 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pertemuan3.R
+import com.example.pertemuan3.owner.OwnerDashboardActivity
 
 class MainActivity : AppCompatActivity() {
 
     private var isPasswordVisible = false
+    private var isOwner = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         val tabCustomer: TextView = findViewById(R.id.tabCustomer)
         val tabOwner: TextView = findViewById(R.id.tabOwner)
-        val etEmail: EditText = findViewById(R.id.etEmail)   // kolom ini dipakai sebagai username
+        val etEmail: EditText = findViewById(R.id.etEmail)
         val etPassword: EditText = findViewById(R.id.etPassword)
         val ivTogglePassword: ImageView = findViewById(R.id.ivTogglePassword)
         val tvForgotPassword: TextView = findViewById(R.id.tvForgotPassword)
@@ -31,6 +33,7 @@ class MainActivity : AppCompatActivity() {
 
         // Tab switching visual simulation
         tabCustomer.setOnClickListener {
+            isOwner = false
             tabCustomer.setBackgroundResource(R.drawable.bg_tab_selected)
             tabCustomer.setTextColor(resources.getColor(R.color.simaju_green))
             tabOwner.setBackgroundResource(R.drawable.bg_tab_unselected)
@@ -38,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         tabOwner.setOnClickListener {
+            isOwner = true
             tabOwner.setBackgroundResource(R.drawable.bg_tab_selected)
             tabOwner.setTextColor(resources.getColor(R.color.simaju_green))
             tabCustomer.setBackgroundResource(R.drawable.bg_tab_unselected)
@@ -57,7 +61,7 @@ class MainActivity : AppCompatActivity() {
             etPassword.setSelection(etPassword.text.length)
         }
 
-        // Login Button (2 rule)
+        // Login Button
         btnLogin.setOnClickListener {
             val username = etEmail.text.toString().trim()
             val password = etPassword.text.toString().trim()
@@ -65,18 +69,20 @@ class MainActivity : AppCompatActivity() {
             if (username.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Username dan Kata Sandi tidak boleh kosong", Toast.LENGTH_SHORT).show()
             } else {
-                val pref = getSharedPreferences("user_data", Context.MODE_PRIVATE)
+                val pref = getSharedPreferences("user_data", MODE_PRIVATE)
                 val spUsername = pref.getString("username", null)
                 val spPassword = pref.getString("password", null)
 
-                // Rule 1: username = password
                 val rule1 = username == password
-                // Rule 2: cocok dengan username & password di SharedPreferences
                 val rule2 = spUsername != null && username == spUsername && password == spPassword
 
                 if (rule1 || rule2) {
                     Toast.makeText(this, "Login Berhasil!", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(this, DashboardActivity::class.java))
+                    if (isOwner) {
+                        startActivity(Intent(this, OwnerDashboardActivity::class.java))
+                    } else {
+                        startActivity(Intent(this, DashboardActivity::class.java))
+                    }
                     finish()
                 } else {
                     Toast.makeText(this, "Username atau password salah", Toast.LENGTH_SHORT).show()

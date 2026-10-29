@@ -192,7 +192,7 @@
                 <TextView
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:text="Alamat"
+                    android:text="Lokasi"
                     android:textSize="13sp"
                     android:textColor="@color/simaju_text_secondary" />
 
@@ -200,10 +200,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="jln. Dumai"
+                    android:text="Google Maps Peta"
                     android:textSize="13sp"
                     android:textStyle="bold"
-                    android:textColor="@color/simaju_text_primary"
+                    android:textColor="@color/simaju_green"
                     android:gravity="end" />
             </LinearLayout>
 

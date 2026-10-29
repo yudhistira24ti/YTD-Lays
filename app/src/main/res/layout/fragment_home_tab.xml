@@ -587,6 +587,7 @@
                         android:layout_marginEnd="6dp" />
 
                     <TextView
+                        android:id="@+id/tvStoreHours"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Buka • 08.00–20.00"
@@ -596,6 +597,7 @@
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/tvStoreName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="BC HPAI Yogyakarta 2"

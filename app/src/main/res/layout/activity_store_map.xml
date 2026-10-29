@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".project.StoreMapActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarMap"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/simaju_green"
+        app:title="Lokasi Toko HPAI"
+        app:titleTextColor="@color/white" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- Instruction banner for Owner -->
+        <TextView
+            android:id="@+id/tvMapInstruction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#CC1B5E20"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:padding="10dp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:text="Ketuk pada peta untuk mengubah lokasi toko" />
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/btnSaveLocation"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="@drawable/bg_primary_button"
+        android:text="Simpan Lokasi Toko"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:textAllCaps="false" />
+
+</LinearLayout>
