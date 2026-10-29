@@ -38,6 +38,11 @@
             android:windowSoftInputMode="adjustResize" />
 
         <activity
+            android:name=".owner.OwnerDashboardActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
             android:name=".project.RegisterActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />

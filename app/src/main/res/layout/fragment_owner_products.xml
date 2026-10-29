@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F9FBF9">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Katalog Produk HPAI"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/simaju_text_primary"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Tambah Produk Baru Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_tab_selected"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tambah Produk Baru"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/simaju_green"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Nama Produk -->
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_input_field"
+                android:hint="Nama Produk"
+                android:paddingHorizontal="12dp"
+                android:textSize="13sp"
+                android:textColor="@color/simaju_text_primary"
+                android:layout_marginBottom="12dp"
+                android:autofillHints="name"
+                android:inputType="text" />
+
+            <!-- Harga & Stok Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_input_field"
+                    android:hint="Harga (Rp)"
+                    android:paddingHorizontal="12dp"
+                    android:textSize="13sp"
+                    android:textColor="@color/simaju_text_primary"
+                    android:layout_marginEnd="8dp"
+                    android:autofillHints="price"
+                    android:inputType="number" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_input_field"
+                    android:hint="Stok"
+                    android:paddingHorizontal="12dp"
+                    android:textSize="13sp"
+                    android:textColor="@color/simaju_text_primary"
+                    android:layout_marginStart="8dp"
+                    android:autofillHints="quantity"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_primary_button"
+                android:text="Tambah Produk"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+        <!-- Product List Table Header & Item -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Daftar Produk Toko"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/simaju_text_primary"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Product Item Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_tab_selected"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="12dp"
+            android:layout_marginBottom="10dp">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/images"
+                android:scaleType="centerInside"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="Truson" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Truson"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/simaju_text_primary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rp 40.000 • Stok: 7"
+                    android:textSize="12sp"
+                    android:textColor="@color/simaju_text_secondary" />
+            </LinearLayout>
+
+            <!-- Edit & Hapus Buttons -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_primary_button"
+                android:text="Edit"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="6dp"
+                android:layout_marginEnd="6dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_tab_selected"
+                android:text="Hapus"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/merah_tua"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="6dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/owner_nav_dashboard"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        android:title="Dashboard" />
+    <item
+        android:id="@+id/owner_nav_produk"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="Produk" />
+    <item
+        android:id="@+id/owner_nav_kategori"
+        android:icon="@android:drawable/ic_menu_compass"
+        android:title="Kategori" />
+    <item
+        android:id="@+id/owner_nav_pesanan"
+        android:icon="@android:drawable/ic_menu_view"
+        android:title="Pesanan" />
+    <item
+        android:id="@+id/owner_nav_settings"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="Settings" />
+</menu>

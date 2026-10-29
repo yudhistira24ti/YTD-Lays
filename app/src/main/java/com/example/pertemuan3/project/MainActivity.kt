@@ -10,10 +10,12 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pertemuan3.R
+import com.example.pertemuan3.owner.OwnerDashboardActivity
 
 class MainActivity : AppCompatActivity() {
 
     private var isPasswordVisible = false
+    private var isOwner = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         // Tab switching visual simulation
         tabCustomer.setOnClickListener {
+            isOwner = false
             tabCustomer.setBackgroundResource(R.drawable.bg_tab_selected)
             tabCustomer.setTextColor(resources.getColor(R.color.simaju_green))
             tabOwner.setBackgroundResource(R.drawable.bg_tab_unselected)
@@ -37,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         tabOwner.setOnClickListener {
+            isOwner = true
             tabOwner.setBackgroundResource(R.drawable.bg_tab_selected)
             tabOwner.setTextColor(resources.getColor(R.color.simaju_green))
             tabCustomer.setBackgroundResource(R.drawable.bg_tab_unselected)
@@ -65,8 +69,13 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Email dan Kata Sandi tidak boleh kosong", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this, "Login Berhasil!", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, DashboardActivity::class.java)
-                startActivity(intent)
+                if (isOwner) {
+                    val intent = Intent(this, OwnerDashboardActivity::class.java)
+                    startActivity(intent)
+                } else {
+                    val intent = Intent(this, DashboardActivity::class.java)
+                    startActivity(intent)
+                }
                 finish()
             }
         }

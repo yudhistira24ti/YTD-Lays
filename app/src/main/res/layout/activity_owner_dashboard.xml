@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9FBF9"
+    tools:context=".owner.OwnerDashboardActivity">
+
+    <!-- Bottom Navigation View for Owner -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/ownerBottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:elevation="8dp"
+        app:itemIconTint="@color/simaju_green"
+        app:itemTextColor="@color/simaju_green"
+        app:menu="@menu/owner_bottom_menu" />
+
+    <!-- Fragment Container -->
+    <FrameLayout
+        android:id="@+id/ownerFragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/ownerBottomNav" />
+
+</RelativeLayout>

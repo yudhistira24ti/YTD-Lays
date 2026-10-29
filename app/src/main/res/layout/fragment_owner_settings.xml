@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F9FBF9">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pengaturan Toko &amp; Akun"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/simaju_text_primary"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Store Settings Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_tab_selected"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pengaturan Toko"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/simaju_green"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Atur alamat toko dan jam operasional"
+                android:textSize="12sp"
+                android:textColor="@color/simaju_text_secondary"
+                android:layout_marginBottom="14dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_input_field"
+                android:hint="Nama Toko"
+                android:text="Toko herbal HPAI"
+                android:paddingHorizontal="12dp"
+                android:textSize="13sp"
+                android:textColor="@color/simaju_text_primary"
+                android:layout_marginBottom="10dp"
+                android:autofillHints="name"
+                android:inputType="text" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:background="@drawable/bg_input_field"
+                android:hint="Alamat Toko"
+                android:text="jln. Dumai"
+                android:paddingHorizontal="12dp"
+                android:paddingTop="10dp"
+                android:textSize="13sp"
+                android:textColor="@color/simaju_text_primary"
+                android:layout_marginBottom="12dp"
+                android:autofillHints="postalAddress"
+                android:inputType="textMultiLine" />
+
+            <!-- Jam Buka & Tutup -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jam Buka"
+                        android:textSize="12sp"
+                        android:textColor="@color/simaju_text_secondary"
+                        android:layout_marginBottom="4dp" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_input_field"
+                        android:text="08:00"
+                        android:paddingHorizontal="12dp"
+                        android:textSize="13sp"
+                        android:textColor="@color/simaju_text_primary"
+                        android:autofillHints="time"
+                        android:inputType="time" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jam Tutup"
+                        android:textSize="12sp"
+                        android:textColor="@color/simaju_text_secondary"
+                        android:layout_marginBottom="4dp" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_input_field"
+                        android:text="20:00"
+                        android:paddingHorizontal="12dp"
+                        android:textSize="13sp"
+                        android:textColor="@color/simaju_text_primary"
+                        android:autofillHints="time"
+                        android:inputType="time" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_primary_button"
+                android:text="Simpan Pengaturan Toko"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+        <!-- Logout Button -->
+        <Button
+            android:id="@+id/btnOwnerLogout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_tab_selected"
+            android:text="Keluar dari Akun Owner"
+            android:textColor="@color/merah_tua"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:layout_marginBottom="16dp" />
+
+    </LinearLayout>
+</ScrollView>

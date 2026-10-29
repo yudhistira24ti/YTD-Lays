@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F9FBF9">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Owner Dashboard"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/simaju_text_primary"
+            android:layout_marginBottom="2dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ringkasan performa toko hari ini"
+            android:textSize="13sp"
+            android:textColor="@color/simaju_text_secondary"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Stats Cards Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+
+            <!-- Pesanan aktif -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_tab_selected"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:layout_marginEnd="6dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pesanan aktif"
+                    android:textSize="12sp"
+                    android:textColor="@color/simaju_text_secondary"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/simaju_text_primary"
+                    android:layout_marginBottom="2dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sedang berjalan"
+                    android:textSize="11sp"
+                    android:textColor="#FFA726" />
+            </LinearLayout>
+
+            <!-- Total transaksi selesai -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_tab_selected"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total selesai"
+                    android:textSize="12sp"
+                    android:textColor="@color/simaju_text_secondary"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/simaju_text_primary"
+                    android:layout_marginBottom="2dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sepanjang waktu"
+                    android:textSize="11sp"
+                    android:textColor="@color/simaju_green" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Pendapatan Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_tab_selected"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pendapatan (selesai)"
+                android:textSize="12sp"
+                android:textColor="@color/simaju_text_secondary"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rp 1.676.000"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/simaju_green"
+                android:layout_marginBottom="2dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dari transaksi selesai"
+                android:textSize="11sp"
+                android:textColor="@color/simaju_text_secondary" />
+        </LinearLayout>
+
+        <!-- Informasi Toko -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_tab_selected"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Informasi toko"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/simaju_text_primary"
+                android:layout_marginBottom="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Nama"
+                    android:textSize="13sp"
+                    android:textColor="@color/simaju_text_secondary" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Toko herbal HPAI"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/simaju_text_primary"
+                    android:gravity="end" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Alamat"
+                    android:textSize="13sp"
+                    android:textColor="@color/simaju_text_secondary" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="jln. Dumai"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/simaju_text_primary"
+                    android:gravity="end" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Jam operasional"
+                    android:textSize="13sp"
+                    android:textColor="@color/simaju_text_secondary" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="08:00:00 – 20:00:00"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/simaju_text_primary"
+                    android:gravity="end" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Pesanan Terakhir -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_tab_selected"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pesanan terakhir"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/simaju_text_primary"
+                android:layout_marginBottom="12dp" />
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0" android:layout_marginBottom="10dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="8dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Order #26ce86\nStatus: Diproses" android:textSize="13sp" android:textColor="@color/simaju_text_primary"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rp 40.000" android:textSize="13sp" android:textStyle="bold" android:textColor="@color/simaju_green"/>
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0" android:layout_marginBottom="10dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="8dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Order #9202a8\nStatus: Selesai" android:textSize="13sp" android:textColor="@color/simaju_text_primary"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rp 140.000" android:textSize="13sp" android:textStyle="bold" android:textColor="@color/simaju_green"/>
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0" android:layout_marginBottom="10dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Order #a1e4d3\nStatus: Selesai" android:textSize="13sp" android:textColor="@color/simaju_text_primary"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rp 1.000.000" android:textSize="13sp" android:textStyle="bold" android:textColor="@color/simaju_green"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
