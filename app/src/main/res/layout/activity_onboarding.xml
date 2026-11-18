@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/simaju_page_bg"
+    android:padding="24dp"
+    android:gravity="center">
+
+    <!-- Logo / Illustration -->
+    <FrameLayout
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/bg_tab_selected"
+        android:padding="12dp"
+        android:layout_marginBottom="32dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/desain_logo"
+            android:scaleType="centerCrop"
+            android:contentDescription="Logo" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvOnboardingTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selamat Datang di SiMaju HPAI"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/simaju_text_primary"
+        android:gravity="center"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:id="@+id/tvOnboardingDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Aplikasi manajemen penjualan dan belanja produk herbal HPAI terpercaya, berkualitas, dan halal."
+        android:textSize="14sp"
+        android:textColor="@color/simaju_text_secondary"
+        android:gravity="center"
+        android:lineSpacingExtra="4dp"
+        android:layout_marginBottom="48dp" />
+
+    <Button
+        android:id="@+id/btnOnboardingNext"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="@drawable/bg_primary_button"
+        android:text="Mulai Sekarang"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textAllCaps="false" />
+
+</LinearLayout>

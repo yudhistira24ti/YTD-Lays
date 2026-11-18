@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_tab_selected"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_margin="6dp"
+    android:clickable="true"
+    android:focusable="true">
+
+    <ImageView
+        android:id="@+id/ivProduct"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/images"
+        android:layout_marginBottom="6dp"
+        android:contentDescription="Produk" />
+
+    <TextView
+        android:id="@+id/tvProductName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Madu HPAI"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="@color/simaju_text_primary"
+        android:layout_marginBottom="2dp" />
+
+    <TextView
+        android:id="@+id/tvProductStock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stok: 50"
+        android:textSize="11sp"
+        android:textColor="@color/simaju_text_secondary"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/tvProductPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rp 85.000"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="@color/simaju_green"
+        android:layout_marginBottom="8dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnInfo"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_primary_button"
+            android:text="Info"
+            android:textSize="11sp"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingHorizontal="2dp"
+            android:layout_marginEnd="2dp" />
+
+        <Button
+            android:id="@+id/btnBuy"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_primary_button"
+            android:text="+Beli"
+            android:textSize="11sp"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingHorizontal="2dp"
+            android:layout_marginStart="2dp" />
+    </LinearLayout>
+
+</LinearLayout>

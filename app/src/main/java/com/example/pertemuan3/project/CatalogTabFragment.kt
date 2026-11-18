@@ -1,12 +1,12 @@
 package com.example.pertemuan3.project
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.pertemuan3.R
 
 class CatalogTabFragment : Fragment() {
@@ -16,33 +16,18 @@ class CatalogTabFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_catalog_tab, container, false)
 
-        val catCardMadu: LinearLayout = view.findViewById(R.id.catCardMadu)
-        val catCardKopi: LinearLayout = view.findViewById(R.id.catCardKopi)
-        val catCardMinyak: LinearLayout = view.findViewById(R.id.catCardMinyak)
-        val catCardSusu: LinearLayout = view.findViewById(R.id.catCardSusu)
+        val recyclerView: RecyclerView = view.findViewById(R.id.recyclerViewProducts)
+        recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
 
-        catCardMadu.setOnClickListener {
-            openProductDetail("Madu HPAI", "Rp 85.000", R.drawable.images)
-        }
-        catCardKopi.setOnClickListener {
-            openProductDetail("Kopi", "Rp 45.000", R.drawable.images_kopi)
-        }
-        catCardMinyak.setOnClickListener {
-            openProductDetail("Minyak HPAI", "Rp 120.000", R.drawable.images_minyak)
-        }
-        catCardSusu.setOnClickListener {
-            openProductDetail("Susu HPAI", "Rp 55.000", R.drawable.images_susu)
-        }
+        val products = listOf(
+            ProductModel("Madu HPAI", "Rp 85.000", "50", R.drawable.images),
+            ProductModel("Kopi", "Rp 45.000", "99", R.drawable.images_kopi),
+            ProductModel("Minyak HPAI", "Rp 120.000", "30", R.drawable.images_minyak),
+            ProductModel("Susu HPAI", "Rp 55.000", "40", R.drawable.images_susu)
+        )
+
+        recyclerView.adapter = ProductAdapter(products)
 
         return view
-    }
-
-    private fun openProductDetail(name: String, price: String, imageRes: Int) {
-        val intent = Intent(requireContext(), ProductDetailActivity::class.java).apply {
-            putExtra("product_name", name)
-            putExtra("product_price", price)
-            putExtra("product_image", imageRes)
-        }
-        startActivity(intent)
     }
 }

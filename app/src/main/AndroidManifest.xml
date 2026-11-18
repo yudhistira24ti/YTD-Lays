@@ -27,17 +27,22 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
-        <!-- Splash Activity as Main Launcher -->
+        <!-- Onboarding Activity as Main Launcher -->
         <activity
-            android:name=".splash.SplashActivity"
+            android:name=".project.OnboardingActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Splash Activity -->
+        <activity
+            android:name=".splash.SplashActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
 
         <!-- Project Login Activity -->
         <activity
@@ -99,7 +104,8 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".pertemuan_2.SecondActivity"
             android:exported="false"
