@@ -55,9 +55,10 @@
                     android:layout_marginBottom="4dp" />
 
                 <TextView
+                    android:id="@+id/tvActiveOrdersCount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1"
+                    android:text="0"
                     android:textSize="22sp"
                     android:textStyle="bold"
                     android:textColor="@color/simaju_text_primary"
@@ -91,9 +92,10 @@
                     android:layout_marginBottom="4dp" />
 
                 <TextView
+                    android:id="@+id/tvCompletedOrdersCount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="4"
+                    android:text="0"
                     android:textSize="22sp"
                     android:textStyle="bold"
                     android:textColor="@color/simaju_text_primary"
@@ -126,9 +128,10 @@
                 android:layout_marginBottom="4dp" />
 
             <TextView
+                android:id="@+id/tvTotalRevenue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Rp 1.676.000"
+                android:text="Rp 0"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 android:textColor="@color/simaju_green"
@@ -232,7 +235,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Pesanan Terakhir -->
+        <!-- Pesanan Terakhir (Dynamic Container) -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -250,26 +253,11 @@
                 android:textColor="@color/simaju_text_primary"
                 android:layout_marginBottom="12dp" />
 
-            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0" android:layout_marginBottom="10dp"/>
-
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="8dp">
-                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Order #26ce86\nStatus: Diproses" android:textSize="13sp" android:textColor="@color/simaju_text_primary"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rp 40.000" android:textSize="13sp" android:textStyle="bold" android:textColor="@color/simaju_green"/>
-            </LinearLayout>
-
-            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0" android:layout_marginBottom="10dp"/>
-
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="8dp">
-                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Order #9202a8\nStatus: Selesai" android:textSize="13sp" android:textColor="@color/simaju_text_primary"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rp 140.000" android:textSize="13sp" android:textStyle="bold" android:textColor="@color/simaju_green"/>
-            </LinearLayout>
-
-            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0" android:layout_marginBottom="10dp"/>
-
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Order #a1e4d3\nStatus: Selesai" android:textSize="13sp" android:textColor="@color/simaju_text_primary"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rp 1.000.000" android:textSize="13sp" android:textStyle="bold" android:textColor="@color/simaju_green"/>
-            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/containerRecentOrders"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
         </LinearLayout>
 
     </LinearLayout>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
@@ -7,170 +8,198 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@color/simaju_page_bg"
         android:padding="16dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Katalog Produk HPAI"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/simaju_text_primary"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Tambah Produk Baru Card -->
+        <!-- Header Row -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_tab_selected"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:layout_marginBottom="20dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tambah Produk Baru"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:textColor="@color/simaju_green"
-                android:layout_marginBottom="12dp" />
-
-            <!-- Nama Produk -->
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:background="@drawable/bg_input_field"
-                android:hint="Nama Produk"
-                android:paddingHorizontal="12dp"
-                android:textSize="13sp"
-                android:textColor="@color/simaju_text_primary"
-                android:layout_marginBottom="12dp"
-                android:autofillHints="name"
-                android:inputType="text" />
-
-            <!-- Harga & Stok Row -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="16dp">
-
-                <EditText
-                    android:layout_width="0dp"
-                    android:layout_height="48dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_input_field"
-                    android:hint="Harga (Rp)"
-                    android:paddingHorizontal="12dp"
-                    android:textSize="13sp"
-                    android:textColor="@color/simaju_text_primary"
-                    android:layout_marginEnd="8dp"
-                    android:autofillHints="price"
-                    android:inputType="number" />
-
-                <EditText
-                    android:layout_width="0dp"
-                    android:layout_height="48dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_input_field"
-                    android:hint="Stok"
-                    android:paddingHorizontal="12dp"
-                    android:textSize="13sp"
-                    android:textColor="@color/simaju_text_primary"
-                    android:layout_marginStart="8dp"
-                    android:autofillHints="quantity"
-                    android:inputType="number" />
-            </LinearLayout>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:background="@drawable/bg_primary_button"
-                android:text="Tambah Produk"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:textAllCaps="false" />
-        </LinearLayout>
-
-        <!-- Product List Table Header & Item -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Daftar Produk Toko"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="@color/simaju_text_primary"
-            android:layout_marginBottom="10dp" />
-
-        <!-- Product Item Card -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_tab_selected"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:padding="12dp"
-            android:layout_marginBottom="10dp">
-
-            <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@drawable/images"
-                android:scaleType="centerInside"
-                android:layout_marginEnd="12dp"
-                android:contentDescription="Truson" />
+            android:layout_marginBottom="14dp">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginEnd="12dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Truson"
-                    android:textSize="14sp"
+                    android:text="Produk Toko"
+                    android:textSize="20sp"
                     android:textStyle="bold"
-                    android:textColor="@color/simaju_text_primary" />
+                    android:textColor="@color/simaju_text_primary"
+                    android:layout_marginBottom="2dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Rp 40.000 • Stok: 7"
+                    android:text="Kelola stok, harga, &amp; kategori produk"
                     android:textSize="12sp"
                     android:textColor="@color/simaju_text_secondary" />
             </LinearLayout>
 
-            <!-- Edit & Hapus Buttons -->
+            <Button
+                android:id="@+id/btnAddProduct"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:minHeight="40dp"
+                android:minWidth="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:background="@drawable/bg_primary_button"
+                app:backgroundTint="@null"
+                android:text="+ Tambah"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:maxLines="1"
+                android:paddingHorizontal="16dp" />
+        </LinearLayout>
+
+        <!-- Search Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="@drawable/bg_input_field"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="12dp"
+            android:layout_marginBottom="12dp">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_search"
+                app:tint="@color/simaju_text_secondary"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="Cari" />
+
+            <EditText
+                android:id="@+id/etSearchProduct"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="Cari nama atau kategori produk..."
+                android:textSize="13sp"
+                android:textColor="@color/simaju_text_primary"
+                android:textColorHint="@color/simaju_text_secondary"
+                android:maxLines="1"
+                android:imeOptions="actionSearch"
+                android:importantForAutofill="no"
+                android:inputType="text" />
+
+            <ImageView
+                android:id="@+id/ivClearSearchProduct"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:padding="4dp"
+                android:src="@drawable/ic_close"
+                app:tint="@color/simaju_text_secondary"
+                android:visibility="gone"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Hapus pencarian" />
+        </LinearLayout>
+
+        <!-- Summary & Loading Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
             <TextView
+                android:id="@+id/tvProductCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_primary_button"
-                android:text="Edit"
+                android:background="@drawable/bg_badge_green"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:text="0 Produk"
                 android:textSize="12sp"
                 android:textStyle="bold"
-                android:textColor="@color/white"
+                android:textColor="@color/simaju_green" />
+
+            <TextView
+                android:id="@+id/tvLowStockCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_badge_orange"
                 android:paddingHorizontal="10dp"
-                android:paddingVertical="6dp"
-                android:layout_marginEnd="6dp" />
+                android:paddingVertical="4dp"
+                android:layout_marginStart="8dp"
+                android:text="0 Stok Menipis"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/simaju_orange_text"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pbProductsLoading"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- Empty State -->
+        <LinearLayout
+            android:id="@+id/layoutEmptyProducts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_tab_selected"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="28dp"
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_tab_selected"
-                android:text="Hapus"
-                android:textSize="12sp"
+                android:text="📦"
+                android:textSize="34sp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tvEmptyProductsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Belum ada produk"
+                android:textSize="15sp"
                 android:textStyle="bold"
-                android:textColor="@color/merah_tua"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="6dp" />
+                android:textColor="@color/simaju_text_primary"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/tvEmptyProductsDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ketuk '+ Tambah' untuk menambahkan produk ke toko."
+                android:textSize="12sp"
+                android:gravity="center"
+                android:textColor="@color/simaju_text_secondary" />
         </LinearLayout>
+
+        <!-- Dynamic Mobile Product Cards Container -->
+        <LinearLayout
+            android:id="@+id/containerOwnerProducts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
 
     </LinearLayout>
 </ScrollView>

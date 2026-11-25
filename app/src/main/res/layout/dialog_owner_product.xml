@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_tab_selected"
+        android:padding="20dp">
+
+        <!-- Title Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/tvDialogProductTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Tambah Produk Baru"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/simaju_green" />
+
+            <ImageView
+                android:id="@+id/btnDialogProductClose"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:padding="4dp"
+                android:src="@drawable/ic_close"
+                app:tint="@color/simaju_text_secondary"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Tutup" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/simaju_green"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Nama Produk -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama Produk *"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/simaju_text_primary"
+            android:layout_marginBottom="6dp" />
+
+        <EditText
+            android:id="@+id/etDialogProductName"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_input_field"
+            android:hint="Contoh: Kopi Sevel HPAI"
+            android:paddingHorizontal="12dp"
+            android:textSize="14sp"
+            android:textColor="@color/simaju_text_primary"
+            android:textColorHint="@color/simaju_text_secondary"
+            android:layout_marginBottom="14dp"
+            android:autofillHints="name"
+            android:inputType="textCapWords" />
+
+        <!-- Kategori Spinner -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kategori *"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/simaju_text_primary"
+            android:layout_marginBottom="6dp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_input_field"
+            android:layout_marginBottom="14dp">
+
+            <Spinner
+                android:id="@+id/spinnerDialogCategory"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:paddingStart="4dp"
+                android:paddingEnd="36dp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/ic_chevron_down"
+                app:tint="@color/simaju_text_secondary"
+                android:contentDescription="Pilih Kategori" />
+        </FrameLayout>
+
+        <!-- Harga & Stok Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="14dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginEnd="6dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Harga (Rp) *"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/simaju_text_primary"
+                    android:layout_marginBottom="6dp" />
+
+                <EditText
+                    android:id="@+id/etDialogProductPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_input_field"
+                    android:hint="50000"
+                    android:paddingHorizontal="12dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/simaju_text_primary"
+                    android:textColorHint="@color/simaju_text_secondary"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="6dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Stok *"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/simaju_text_primary"
+                    android:layout_marginBottom="6dp" />
+
+                <EditText
+                    android:id="@+id/etDialogProductStock"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_input_field"
+                    android:hint="20"
+                    android:paddingHorizontal="12dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/simaju_text_primary"
+                    android:textColorHint="@color/simaju_text_secondary"
+                    android:importantForAutofill="no"
+                    android:inputType="number" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Gambar Produk -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gambar Produk"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/simaju_text_primary"
+            android:layout_marginBottom="6dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_input_field"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:layout_marginBottom="18dp">
+
+            <FrameLayout
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_product_thumb"
+                android:padding="4dp"
+                android:layout_marginEnd="10dp">
+
+                <ImageView
+                    android:id="@+id/ivDialogProductPreview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_image"
+                    app:tint="@color/simaju_text_secondary"
+                    android:contentDescription="Pratinjau Gambar" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginEnd="8dp">
+
+                <TextView
+                    android:id="@+id/tvDialogSelectedFileName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Belum ada gambar dipilih"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/simaju_text_primary"
+                    android:maxLines="1"
+                    android:ellipsize="end" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Format JPG / PNG dari galeri"
+                    android:textSize="11sp"
+                    android:textColor="@color/simaju_text_secondary" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnDialogPickImage"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:minHeight="38dp"
+                android:minWidth="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:background="@drawable/bg_primary_button"
+                app:backgroundTint="@null"
+                android:text="Pilih"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:maxLines="1"
+                android:paddingHorizontal="14dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/simaju_input_stroke"
+            android:layout_marginBottom="14dp" />
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnDialogProductCancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minHeight="46dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:background="@drawable/bg_badge_neutral"
+                app:backgroundTint="@null"
+                android:text="Batal"
+                android:textColor="@color/simaju_text_primary"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="12dp"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/btnDialogProductSubmit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minHeight="46dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:background="@drawable/bg_primary_button"
+                app:backgroundTint="@null"
+                android:text="Tambah"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="12dp"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
@@ -7,7 +8,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@color/simaju_page_bg"
         android:padding="16dp">
@@ -18,13 +19,14 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="14dp">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginEnd="12dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -44,166 +46,146 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/btnAddCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
+                android:minHeight="40dp"
+                android:minWidth="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
                 android:background="@drawable/bg_primary_button"
+                app:backgroundTint="@null"
                 android:text="+ Tambah"
                 android:textColor="@color/white"
-                android:textSize="12sp"
+                android:textSize="13sp"
                 android:textStyle="bold"
                 android:textAllCaps="false"
-                android:paddingHorizontal="12dp" />
+                android:maxLines="1"
+                android:paddingHorizontal="16dp" />
         </LinearLayout>
 
-        <!-- Category Item 1 -->
+        <!-- Search Bar -->
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="@drawable/bg_input_field"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="12dp"
+            android:layout_marginBottom="12dp">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_search"
+                app:tint="@color/simaju_text_secondary"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="Cari" />
+
+            <EditText
+                android:id="@+id/etSearchCategory"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="Cari kategori..."
+                android:textSize="13sp"
+                android:textColor="@color/simaju_text_primary"
+                android:textColorHint="@color/simaju_text_secondary"
+                android:maxLines="1"
+                android:imeOptions="actionSearch"
+                android:importantForAutofill="no"
+                android:inputType="text" />
+
+            <ImageView
+                android:id="@+id/ivClearSearchCategory"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:padding="4dp"
+                android:src="@drawable/ic_close"
+                app:tint="@color/simaju_text_secondary"
+                android:visibility="gone"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Hapus pencarian" />
+        </LinearLayout>
+
+        <!-- Summary & Loading Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:id="@+id/tvCategoryCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_badge_green"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:text="0 Kategori"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/simaju_green" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pbCategoriesLoading"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- Empty State -->
+        <LinearLayout
+            android:id="@+id/layoutEmptyCategories"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_tab_selected"
             android:orientation="vertical"
-            android:padding="16dp"
-            android:layout_marginBottom="12dp">
+            android:gravity="center"
+            android:padding="28dp"
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Minuman herbal"
-                android:textSize="16sp"
+                android:text="🗂️"
+                android:textSize="34sp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tvEmptyCategoriesTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Belum ada kategori"
+                android:textSize="15sp"
                 android:textStyle="bold"
-                android:textColor="@color/simaju_green"
+                android:textColor="@color/simaju_text_primary"
                 android:layout_marginBottom="4dp" />
 
             <TextView
+                android:id="@+id/tvEmptyCategoriesDesc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tidak ada deskripsi"
+                android:text="Ketuk '+ Tambah' untuk membuat kategori produk baru."
                 android:textSize="12sp"
-                android:textColor="@color/simaju_text_secondary"
-                android:layout_marginBottom="12dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Edit"
-                    android:textSize="13sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/simaju_green"
-                    android:layout_marginEnd="16dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Hapus"
-                    android:textSize="13sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/merah_tua" />
-            </LinearLayout>
+                android:gravity="center"
+                android:textColor="@color/simaju_text_secondary" />
         </LinearLayout>
 
-        <!-- Category Item 2 -->
+        <!-- Dynamic Category Container -->
         <LinearLayout
+            android:id="@+id/containerOwnerCategories"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_tab_selected"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:layout_marginBottom="12dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Suplemen &amp; vitamin"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@color/simaju_green"
-                android:layout_marginBottom="4dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tidak ada deskripsi"
-                android:textSize="12sp"
-                android:textColor="@color/simaju_text_secondary"
-                android:layout_marginBottom="12dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Edit"
-                    android:textSize="13sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/simaju_green"
-                    android:layout_marginEnd="16dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Hapus"
-                    android:textSize="13sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/merah_tua" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <!-- Category Item 3 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_tab_selected"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:layout_marginBottom="12dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Perawatan Tubuh"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@color/simaju_green"
-                android:layout_marginBottom="4dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tidak ada deskripsi"
-                android:textSize="12sp"
-                android:textColor="@color/simaju_text_secondary"
-                android:layout_marginBottom="12dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Edit"
-                    android:textSize="13sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/simaju_green"
-                    android:layout_marginEnd="16dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Hapus"
-                    android:textSize="13sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/merah_tua" />
-            </LinearLayout>
-        </LinearLayout>
+            android:orientation="vertical" />
 
     </LinearLayout>
 </ScrollView>

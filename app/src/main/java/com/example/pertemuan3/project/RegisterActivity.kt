@@ -4,24 +4,47 @@ import android.app.DatePickerDialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.RadioGroup
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
+import androidx.lifecycle.lifecycleScope
 import com.example.pertemuan3.R
+import com.example.pertemuan3.service.SupabaseService
+import kotlinx.coroutines.launch
 import java.util.Calendar
 
 class RegisterActivity : AppCompatActivity() {
+
+    // Registrasi publik dikhususkan hanya untuk pelanggan (customer)
+    private val selectedRole: String = "customer"
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        val toolbar: Toolbar = findViewById(R.id.toolbarRegister)
-        setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = "Daftar Akun SiMaju"
+        val headerBar: View = findViewById(R.id.registerHeaderBar)
+        val scrollContent: View = findViewById(R.id.scrollRegisterContent)
+        val btnBack: ImageView = findViewById(R.id.btnRegisterBack)
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.registerRootLayout)) { _, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            headerBar.updatePadding(top = systemBars.top)
+            scrollContent.updatePadding(bottom = systemBars.bottom)
+            insets
+        }
+
+        btnBack.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
 
         val etName: EditText = findViewById(R.id.etName)
         val etEmail: EditText = findViewById(R.id.etRegEmail)
@@ -65,30 +88,47 @@ class RegisterActivity : AppCompatActivity() {
                 password.isEmpty() || confirmPassword.isEmpty()
             ) {
                 Toast.makeText(this, "Semua field harus diisi", Toast.LENGTH_SHORT).show()
-            } else if (password != confirmPassword) {
+                return@setOnClickListener
+            }
+
+            if (password != confirmPassword) {
                 etConfirmPassword.error = "Password tidak sama"
-            } else {
-                // Simpan ke SharedPreferences
-                val pref = getSharedPreferences("user_data", Context.MODE_PRIVATE)
-                pref.edit().apply {
-                    putString("nama", name)
-                    putString("email", email)
-                    putString("tanggal_lahir", tglLahir)
-                    putString("gender", gender)
-                    putString("username", username)
-                    putString("password", password)
-                    putString("confirm_password", confirmPassword)
-                    apply()
+                etConfirmPassword.requestFocus()
+                return@setOnClickListener
+            }
+
+            btnRegisterSubmit.isEnabled = false
+            btnRegisterSubmit.text = "Mendaftarkan..."
+
+            // Simpan ke SharedPreferences
+            val pref = getSharedPreferences("user_data", Context.MODE_PRIVATE)
+            pref.edit().apply {
+                putString("nama", name)
+                putString("email", email)
+                putString("tanggal_lahir", tglLahir)
+                putString("gender", gender)
+                putString("username", username)
+                putString("password", password)
+                putString("confirm_password", confirmPassword)
+                putString("role", selectedRole)
+                putBoolean("is_owner", false)
+                apply()
+            }
+
+            // Kirim ke Supabase tabel 'users'
+            lifecycleScope.launch {
+                SupabaseService.registerUser(name, email, password, selectedRole) { success, msg ->
+                    btnRegisterSubmit.isEnabled = true
+                    btnRegisterSubmit.text = "Daftar Sekarang"
+                    Toast.makeText(this@RegisterActivity, msg, Toast.LENGTH_SHORT).show()
+
+                    val intent = Intent(this@RegisterActivity, ValidasiActivity::class.java).apply {
+                        putExtra("registered_role", selectedRole)
+                    }
+                    startActivity(intent)
+                    finish()
                 }
-
-
-                startActivity(Intent(this, ValidasiActivity::class.java))
             }
         }
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressedDispatcher.onBackPressed()
-        return true
     }
 }

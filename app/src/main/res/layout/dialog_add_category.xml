@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_tab_selected"
+        android:padding="20dp">
+
+        <!-- Title Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/tvDialogCategoryTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Tambah Kategori Baru"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/simaju_green" />
+
+            <ImageView
+                android:id="@+id/btnDialogCategoryClose"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:padding="4dp"
+                android:src="@drawable/ic_close"
+                app:tint="@color/simaju_text_secondary"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Tutup" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/simaju_green"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Pilih Ikon Kategori Label -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pilih Ikon Kategori"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/simaju_text_primary"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Horizontal Emoji Icons Bar -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:id="@+id/containerEmojiIcons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <!-- Nama Kategori Label & Field -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama Kategori *"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/simaju_text_primary"
+            android:layout_marginBottom="6dp" />
+
+        <EditText
+            android:id="@+id/etDialogCategoryName"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_input_field"
+            android:hint="Contoh: Minuman Herbal"
+            android:paddingHorizontal="12dp"
+            android:textSize="14sp"
+            android:textColor="@color/simaju_text_primary"
+            android:textColorHint="@color/simaju_text_secondary"
+            android:layout_marginBottom="14dp"
+            android:autofillHints="name"
+            android:inputType="textCapWords" />
+
+        <!-- Deskripsi Kategori Label & Field -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Deskripsi Kategori"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/simaju_text_primary"
+            android:layout_marginBottom="6dp" />
+
+        <EditText
+            android:id="@+id/etDialogCategoryDesc"
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:background="@drawable/bg_input_field"
+            android:hint="Keterangan singkat tentang kategori..."
+            android:padding="12dp"
+            android:gravity="top|start"
+            android:textSize="14sp"
+            android:textColor="@color/simaju_text_primary"
+            android:textColorHint="@color/simaju_text_secondary"
+            android:layout_marginBottom="18dp"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine|textCapSentences" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/simaju_input_stroke"
+            android:layout_marginBottom="14dp" />
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnDialogCancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minHeight="46dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:background="@drawable/bg_badge_neutral"
+                app:backgroundTint="@null"
+                android:text="Batal"
+                android:textColor="@color/simaju_text_primary"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="12dp"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/btnDialogSubmit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minHeight="46dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:background="@drawable/bg_primary_button"
+                app:backgroundTint="@null"
+                android:text="Tambah"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="12dp"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

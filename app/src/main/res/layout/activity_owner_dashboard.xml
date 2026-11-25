@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ownerRootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/simaju_page_bg"
@@ -11,12 +12,13 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/ownerBottomNav"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/simaju_card_bg"
         android:elevation="8dp"
         app:itemIconTint="@color/simaju_green"
         app:itemTextColor="@color/simaju_green"
+        app:labelVisibilityMode="labeled"
         app:menu="@menu/owner_bottom_menu" />
 
     <!-- Fragment Container -->

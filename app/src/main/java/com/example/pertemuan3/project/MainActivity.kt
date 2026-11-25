@@ -10,8 +10,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.example.pertemuan3.R
 import com.example.pertemuan3.owner.OwnerDashboardActivity
+import com.example.pertemuan3.service.SupabaseService
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,17 +38,17 @@ class MainActivity : AppCompatActivity() {
         tabCustomer.setOnClickListener {
             isOwner = false
             tabCustomer.setBackgroundResource(R.drawable.bg_tab_selected)
-            tabCustomer.setTextColor(resources.getColor(R.color.simaju_green))
+            tabCustomer.setTextColor(resources.getColor(R.color.simaju_green, null))
             tabOwner.setBackgroundResource(R.drawable.bg_tab_unselected)
-            tabOwner.setTextColor(resources.getColor(R.color.simaju_tab_unselected_text))
+            tabOwner.setTextColor(resources.getColor(R.color.simaju_tab_unselected_text, null))
         }
 
         tabOwner.setOnClickListener {
             isOwner = true
             tabOwner.setBackgroundResource(R.drawable.bg_tab_selected)
-            tabOwner.setTextColor(resources.getColor(R.color.simaju_green))
+            tabOwner.setTextColor(resources.getColor(R.color.simaju_green, null))
             tabCustomer.setBackgroundResource(R.drawable.bg_tab_unselected)
-            tabCustomer.setTextColor(resources.getColor(R.color.simaju_tab_unselected_text))
+            tabCustomer.setTextColor(resources.getColor(R.color.simaju_tab_unselected_text, null))
         }
 
         // Toggle Password Visibility
@@ -63,29 +66,68 @@ class MainActivity : AppCompatActivity() {
 
         // Login Button
         btnLogin.setOnClickListener {
-            val username = etEmail.text.toString().trim()
-            val password = etPassword.text.toString().trim()
+            val inputIdentifier = etEmail.text.toString().trim() // Bisa berupa Email ATAU Username
+            val inputPassword = etPassword.text.toString().trim()
 
-            if (username.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Username dan Kata Sandi tidak boleh kosong", Toast.LENGTH_SHORT).show()
-            } else {
-                val pref = getSharedPreferences("user_data", MODE_PRIVATE)
-                val spUsername = pref.getString("username", null)
-                val spPassword = pref.getString("password", null)
+            if (inputIdentifier.isEmpty() || inputPassword.isEmpty()) {
+                Toast.makeText(this, "Email/Username dan Kata Sandi tidak boleh kosong", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
-                val rule1 = username == password
-                val rule2 = spUsername != null && username == spUsername && password == spPassword
+            btnLogin.isEnabled = false
+            btnLogin.text = "Memeriksa..."
 
-                if (rule1 || rule2) {
-                    Toast.makeText(this, "Login Berhasil!", Toast.LENGTH_SHORT).show()
-                    if (isOwner) {
-                        startActivity(Intent(this, OwnerDashboardActivity::class.java))
+            val pref = getSharedPreferences("user_data", Context.MODE_PRIVATE)
+            val spUsername = pref.getString("username", null)
+            val spEmail = pref.getString("email", null)
+            val spPassword = pref.getString("password", null)
+
+            // Cek lokal cepat
+            val isLocalMatched = spPassword != null &&
+                inputPassword == spPassword &&
+                (inputIdentifier.equals(spUsername, ignoreCase = true) || inputIdentifier.equals(spEmail, ignoreCase = true))
+
+            val isDemoMatched = inputIdentifier == inputPassword
+
+            if (isLocalMatched || isDemoMatched) {
+                btnLogin.isEnabled = true
+                btnLogin.text = "Masuk Sekarang"
+                proceedLogin()
+                return@setOnClickListener
+            }
+
+            // Jika tidak ada di cache lokal, cek langsung ke database Supabase
+            lifecycleScope.launch {
+                SupabaseService.loginUser(inputIdentifier, inputPassword) { success, userObj, errMsg ->
+                    btnLogin.isEnabled = true
+                    btnLogin.text = "Masuk Sekarang"
+
+                    if (success && userObj != null) {
+                        val name = userObj.optString("name", inputIdentifier)
+                        val email = userObj.optString("email", inputIdentifier)
+                        val dbRole = userObj.optString("role", "").lowercase()
+
+                        // Jika tab yang dipilih Owner tapi role di database bukan owner:
+                        if (isOwner && dbRole.isNotEmpty() && dbRole != "owner" && dbRole != "admin") {
+                            Toast.makeText(this@MainActivity, "Akun ini bukan akun Owner Toko", Toast.LENGTH_SHORT).show()
+                            return@loginUser
+                        }
+
+                        // Jika login di tab Customer tapi role di database adalah owner, otomatis kita sesuaikan
+                        val actualIsOwner = if (dbRole == "owner") true else isOwner
+
+                        pref.edit().apply {
+                            putString("username", name)
+                            putString("email", email)
+                            putString("password", inputPassword)
+                            putString("role", if (actualIsOwner) "owner" else "customer")
+                            putBoolean("is_owner", actualIsOwner)
+                            apply()
+                        }
+                        proceedLogin(actualIsOwner)
                     } else {
-                        startActivity(Intent(this, DashboardActivity::class.java))
+                        Toast.makeText(this@MainActivity, errMsg ?: "Email/Username atau password salah", Toast.LENGTH_SHORT).show()
                     }
-                    finish()
-                } else {
-                    Toast.makeText(this, "Username atau password salah", Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -99,5 +141,15 @@ class MainActivity : AppCompatActivity() {
         tvRegister.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
         }
+    }
+
+    private fun proceedLogin(asOwner: Boolean = isOwner) {
+        Toast.makeText(this, "Login Berhasil!", Toast.LENGTH_SHORT).show()
+        if (asOwner) {
+            startActivity(Intent(this, OwnerDashboardActivity::class.java))
+        } else {
+            startActivity(Intent(this, DashboardActivity::class.java))
+        }
+        finish()
     }
 }

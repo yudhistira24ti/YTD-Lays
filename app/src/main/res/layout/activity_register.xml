@@ -2,36 +2,66 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/registerRootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F5F5F5"
+    android:background="@color/simaju_page_bg"
     tools:context=".project.RegisterActivity">
 
-    <!-- Toolbar with Back Button -->
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarRegister"
+    <!-- Top App Bar / Header with Inset Padding -->
+    <LinearLayout
+        android:id="@+id/registerHeaderBar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="wrap_content"
         android:background="@color/simaju_green"
-        app:title="Daftar Akun SiMaju"
-        app:titleTextColor="@color/white" />
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="12dp">
+
+        <ImageView
+            android:id="@+id/btnRegisterBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@color/white"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="Kembali" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Daftar Akun SiMaju"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
 
     <ScrollView
+        android:id="@+id/scrollRegisterContent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        android:scrollbars="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="24dp">
+            android:paddingHorizontal="20dp"
+            android:paddingTop="18dp"
+            android:paddingBottom="28dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Buat Akun Baru"
+                android:text="Buat Akun Pelanggan"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 android:textColor="@color/simaju_text_primary"
@@ -40,185 +70,219 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Daftar untuk mulai belanja &amp; mengelola HPAI"
-                android:textSize="14sp"
+                android:text="Daftarkan akun Anda untuk mulai berbelanja produk herbal HPAI"
+                android:textSize="13sp"
                 android:textColor="@color/simaju_text_secondary"
-                android:layout_marginBottom="24dp" />
+                android:layout_marginBottom="20dp" />
 
-            <!-- Nama -->
+            <!-- Nama Lengkap -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nama Lengkap"
-                android:textSize="14sp"
+                android:text="Nama Lengkap *"
+                android:textSize="13sp"
                 android:textStyle="bold"
                 android:textColor="@color/simaju_text_primary"
-                android:layout_marginBottom="8dp" />
+                android:layout_marginBottom="6dp" />
 
             <EditText
                 android:id="@+id/etName"
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
+                android:layout_height="48dp"
                 android:background="@drawable/bg_input_field"
-                android:hint="Nama Lengkap"
-                android:inputType="textPersonName"
+                android:hint="Contoh: Muhammad Yudhistira"
+                android:inputType="textPersonName|textCapWords"
                 android:paddingHorizontal="14dp"
                 android:textSize="14sp"
-                android:layout_marginBottom="16dp"
+                android:textColor="@color/simaju_text_primary"
+                android:textColorHint="@color/simaju_text_secondary"
+                android:layout_marginBottom="14dp"
                 android:autofillHints="name" />
 
             <!-- Email -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Alamat Email"
-                android:textSize="14sp"
+                android:text="Alamat Email *"
+                android:textSize="13sp"
                 android:textStyle="bold"
                 android:textColor="@color/simaju_text_primary"
-                android:layout_marginBottom="8dp" />
+                android:layout_marginBottom="6dp" />
 
             <EditText
                 android:id="@+id/etRegEmail"
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
+                android:layout_height="48dp"
                 android:background="@drawable/bg_input_field"
-                android:hint="Email"
+                android:hint="nama@email.com"
                 android:inputType="textEmailAddress"
                 android:paddingHorizontal="14dp"
                 android:textSize="14sp"
-                android:layout_marginBottom="16dp"
+                android:textColor="@color/simaju_text_primary"
+                android:textColorHint="@color/simaju_text_secondary"
+                android:layout_marginBottom="14dp"
                 android:autofillHints="emailAddress" />
 
             <!-- Tanggal Lahir (DatePicker) -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tanggal Lahir"
-                android:textSize="14sp"
+                android:text="Tanggal Lahir *"
+                android:textSize="13sp"
                 android:textStyle="bold"
                 android:textColor="@color/simaju_text_primary"
-                android:layout_marginBottom="8dp" />
+                android:layout_marginBottom="6dp" />
 
-            <EditText
-                android:id="@+id/etTanggalLahir"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:background="@drawable/bg_input_field"
-                android:hint="Pilih tanggal lahir"
-                android:focusable="false"
-                android:clickable="true"
-                android:cursorVisible="false"
-                android:inputType="none"
-                android:drawableEnd="@android:drawable/ic_menu_my_calendar"
-                android:paddingHorizontal="14dp"
-                android:textSize="14sp"
-                android:layout_marginBottom="16dp" />
+                android:layout_height="48dp"
+                android:layout_marginBottom="14dp">
 
-            <!-- Jenis Kelamin (RadioButton) -->
+                <EditText
+                    android:id="@+id/etTanggalLahir"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_input_field"
+                    android:hint="Pilih tanggal lahir"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:inputType="none"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="42dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/simaju_text_primary"
+                    android:textColorHint="@color/simaju_text_secondary" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="14dp"
+                    android:src="@android:drawable/ic_menu_my_calendar"
+                    app:tint="@color/simaju_green"
+                    android:contentDescription="Kalender" />
+            </FrameLayout>
+
+            <!-- Jenis Kelamin -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Jenis Kelamin"
-                android:textSize="14sp"
+                android:text="Jenis Kelamin *"
+                android:textSize="13sp"
                 android:textStyle="bold"
                 android:textColor="@color/simaju_text_primary"
-                android:layout_marginBottom="8dp" />
+                android:layout_marginBottom="6dp" />
 
             <RadioGroup
                 android:id="@+id/rgGender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginBottom="16dp">
+                android:layout_marginBottom="14dp">
 
                 <RadioButton
                     android:id="@+id/rbLaki"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Laki-laki"
+                    android:textColor="@color/simaju_text_primary"
+                    android:textSize="13sp"
                     android:layout_marginEnd="24dp" />
 
                 <RadioButton
                     android:id="@+id/rbPerempuan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Perempuan" />
+                    android:text="Perempuan"
+                    android:textColor="@color/simaju_text_primary"
+                    android:textSize="13sp" />
             </RadioGroup>
 
             <!-- Username -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Username"
-                android:textSize="14sp"
+                android:text="Username *"
+                android:textSize="13sp"
                 android:textStyle="bold"
                 android:textColor="@color/simaju_text_primary"
-                android:layout_marginBottom="8dp" />
+                android:layout_marginBottom="6dp" />
 
             <EditText
                 android:id="@+id/etUsername"
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
+                android:layout_height="48dp"
                 android:background="@drawable/bg_input_field"
-                android:hint="Username"
+                android:hint="Username untuk login"
                 android:inputType="text"
                 android:paddingHorizontal="14dp"
                 android:textSize="14sp"
-                android:layout_marginBottom="16dp"
+                android:textColor="@color/simaju_text_primary"
+                android:textColorHint="@color/simaju_text_secondary"
+                android:layout_marginBottom="14dp"
                 android:autofillHints="username" />
 
             <!-- Password -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Kata Sandi"
-                android:textSize="14sp"
+                android:text="Kata Sandi *"
+                android:textSize="13sp"
                 android:textStyle="bold"
                 android:textColor="@color/simaju_text_primary"
-                android:layout_marginBottom="8dp" />
+                android:layout_marginBottom="6dp" />
 
             <EditText
                 android:id="@+id/etRegPassword"
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
+                android:layout_height="48dp"
                 android:background="@drawable/bg_input_field"
-                android:hint="••••••••••"
+                android:hint="Minimal 6 karakter"
                 android:inputType="textPassword"
                 android:paddingHorizontal="14dp"
                 android:textSize="14sp"
-                android:layout_marginBottom="16dp"
+                android:textColor="@color/simaju_text_primary"
+                android:textColorHint="@color/simaju_text_secondary"
+                android:layout_marginBottom="14dp"
                 android:autofillHints="password" />
 
             <!-- Confirm Password -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Konfirmasi Kata Sandi"
-                android:textSize="14sp"
+                android:text="Konfirmasi Kata Sandi *"
+                android:textSize="13sp"
                 android:textStyle="bold"
                 android:textColor="@color/simaju_text_primary"
-                android:layout_marginBottom="8dp" />
+                android:layout_marginBottom="6dp" />
 
             <EditText
                 android:id="@+id/etConfirmPassword"
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
+                android:layout_height="48dp"
                 android:background="@drawable/bg_input_field"
-                android:hint="••••••••••"
+                android:hint="Ulangi kata sandi"
                 android:inputType="textPassword"
                 android:paddingHorizontal="14dp"
                 android:textSize="14sp"
+                android:textColor="@color/simaju_text_primary"
+                android:textColorHint="@color/simaju_text_secondary"
                 android:layout_marginBottom="24dp" />
 
-            <!-- Tombol Selanjutnya -->
+            <!-- Tombol Submit -->
             <Button
                 android:id="@+id/btnRegisterSubmit"
                 android:layout_width="match_parent"
-                android:layout_height="54dp"
+                android:layout_height="48dp"
+                android:minHeight="48dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
                 android:background="@drawable/bg_primary_button"
-                android:text="Selanjutnya"
+                app:backgroundTint="@null"
+                android:text="Daftar Sekarang"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="15sp"
                 android:textStyle="bold"
                 android:textAllCaps="false" />
 
